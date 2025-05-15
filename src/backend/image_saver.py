@@ -4,6 +4,7 @@ from typing import Any
 from uuid import uuid4
 from backend.models.lcmdiffusion_setting import LCMDiffusionSetting
 from utils import get_image_file_extension
+import torch
 
 
 def get_exclude_keys():
@@ -72,4 +73,3 @@ class ImageSaver:
                         indent=4,
                     )
         return image_ids
-            

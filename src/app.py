@@ -2,6 +2,7 @@ import json
 from argparse import ArgumentParser
 
 from PIL import Image
+import torch
 
 import constants
 from backend.controlnet import controlnet_settings_from_dict
@@ -133,6 +134,11 @@ parser.add_argument(
     "--use_openvino",
     action="store_true",
     help="Use OpenVINO model",
+)
+parser.add_argument(
+    "--use_cuda",
+    action="store_true",
+    help="Use CUDA model",
 )
 
 parser.add_argument(
@@ -349,6 +355,7 @@ else:
     config.lcm_diffusion_setting.strength = args.strength
     config.lcm_diffusion_setting.seed = args.seed
     config.lcm_diffusion_setting.use_openvino = args.use_openvino
+    config.lcm_diffusion_setting.use_cuda = args.use_cuda
     config.lcm_diffusion_setting.use_tiny_auto_encoder = args.use_tiny_auto_encoder
     config.lcm_diffusion_setting.use_lcm_lora = args.use_lcm_lora
     config.lcm_diffusion_setting.lcm_lora.base_model_id = args.base_model_id

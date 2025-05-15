@@ -1,4 +1,5 @@
 import platform
+import torch
 
 import uvicorn
 from backend.device import get_device_name

@@ -1,4 +1,5 @@
 import platform
+import torch
 
 import uvicorn
 from fastapi import FastAPI
